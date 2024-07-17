@@ -39,6 +39,15 @@ label {
   color: #555;
 }
 
+button {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
 button:hover {
   background-color: #45a049;
 }
@@ -49,15 +58,6 @@ input[type="number"] button {
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
-}
-
-button {
-  width: 100%;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
 }
 
 input[type="number"] {
