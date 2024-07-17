@@ -39,16 +39,16 @@ label {
   color: #555;
 }
 
+button:hover {
+  background-color: #45a049;
+}
+
 input[type="number"] button {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
-}
-
-input[type="number"] {
-  width: calc(100% - 70px);
 }
 
 button {
@@ -60,8 +60,8 @@ button {
   margin-top: 10px;
 }
 
-button:hover {
-  background-color: #45a049;
+input[type="number"] {
+  width: calc(100% - 70px);
 }
 
 #change-due {
