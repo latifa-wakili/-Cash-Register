@@ -19,7 +19,7 @@ document.getElementById('price').innerHTML = `<b>Price:</b> ${price}`;
 
 const displayCashInDrawer = () => {
   displayCid.innerHTML = `<h4>Cash in Drawer:</h4>${
-    cid.map((cash) => `${cash[0]}: $${cash[1].toFixed(2)} <br>`).reverse().join('')
+    cid.map(cash => `${cash[0]}: $${cash[1].toFixed(2)} <br>`).reverse().join('')
   }`;
 };
 
@@ -28,7 +28,7 @@ const checkRegister = () => {
   let change = Number((cashInt - price).toFixed(2));
   const totalCid = Number(cid.reduce((total, sum) => total + sum[1], 0).toFixed(2));
 
-  if (isNaN(cashInt) || cashInt < 0) {
+  if (Number.isNaN(cashInt) || cashInt < 0) {
     alert('Please enter a valid cash amount.');
     return;
   }
@@ -78,12 +78,12 @@ const checkRegister = () => {
 
   if (remainingCid === 0) {
     displayChangeDue.innerHTML = `Status: CLOSED ${
-      changeArr.map((cash) => `${cash[0]}: $${cash[1].toFixed(2)}`).join(' ')
+      changeArr.map(cash => `${cash[0]}: $${cash[1].toFixed(2)}`).join(' ')
     }`;
-    cid = cid.map((denom) => [denom[0], 0]);
+    cid = cid.map(denom => [denom[0], 0]);
   } else {
     displayChangeDue.innerHTML = `Status: <b>OPEN</b> <br><br>${
-      changeArr.map((cash) => `<b>${cash[0]}</b>: $${cash[1].toFixed(2)} <br>`).join('')
+      changeArr.map(cash => `<b>${cash[0]}</b>: $${cash[1].toFixed(2)} <br>`).join('')
     }`;
     cid = cidCopy;
   }
@@ -95,7 +95,7 @@ window.onload = displayCashInDrawer;
 
 purchaseBtn.addEventListener('click', checkRegister);
 
-cash.addEventListener('keydown', (e) => {
+cash.addEventListener('keydown', e => {
   if (e.key === 'Enter') {
     checkRegister();
   }
