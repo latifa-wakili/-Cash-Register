@@ -1,7 +1,7 @@
 readme# Project Title 🚀
 -Cash-Register
 ## Project Description 📝
-this palindrome project is a basic sample of JS project created using html css and js codes
+this Cash-Register project is a basic sample of JS project created using html css and js codes
 
 ## Demo 📸
 ![Demo](cash.png)
