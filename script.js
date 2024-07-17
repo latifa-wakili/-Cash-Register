@@ -57,6 +57,7 @@ const checkCashRegister = () => {
   const cashInCents = Math.round(Number(cash.value) * 100);
   const priceInCents = Math.round(price * 100);
   if (cashInCents < priceInCents) {
+    // eslint-disable-next-line no-console
     console.warn('Customer does not have enough money to purchase the item');
     cash.value = '';
     return;
