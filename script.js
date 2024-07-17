@@ -1,5 +1,5 @@
-const price = 3.26; // تغییر let به const
-const cid = [ // تغییر let به const
+const price = 3.26;
+const cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
   ['DIME', 3.1],
@@ -9,7 +9,7 @@ const cid = [ // تغییر let به const
   ['TEN', 20],
   ['TWENTY', 60],
   ['ONE HUNDRED', 100],
-]; // اضافه کردن کاما در انتهای آرایه
+];
 
 const displayChangeDue = document.getElementById('change-due');
 const cash = document.getElementById('cash');
@@ -21,14 +21,43 @@ const formatResults = (status, change) => {
   displayChangeDue.innerHTML = <p>Status: ${status}</p>;
   displayChangeDue.innerHTML += change
     .map(([denominationName, amount]) => <p>${denominationName}: $${amount}</p>)
-    .join(''); // اصلاح ساختار map
+    .join('');
+};
+
+const updateUI = (change) => {
+  const currencyNameMap = {
+    PENNY: 'Pennies',
+    NICKEL: 'Nickels',
+    DIME: 'Dimes',
+    QUARTER: 'Quarters',
+    ONE: 'Ones',
+    FIVE: 'Fives',
+    TEN: 'Tens',
+    TWENTY: 'Twenties',
+    'ONE HUNDRED': 'Hundreds',
+  };
+
+  if (change) {
+    change.forEach(([changeDenomination, changeAmount]) => {
+      const targetArr = cid.find(([denominationName]) => denominationName === changeDenomination);
+      targetArr[1] = (Math.round(targetArr[1] * 100) - Math.round(changeAmount * 100)) / 100;
+    });
+  }
+
+  cash.value = '';
+  priceScreen.textContent = `Total: $${price}`;
+  cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p>
+    ${cid
+      .map(([denominationName, amount]) => <p>${currencyNameMap[denominationName]}: $${amount}</p>)
+      .join('')}
+  `;
 };
 
 const checkCashRegister = () => {
   const cashInCents = Math.round(Number(cash.value) * 100);
   const priceInCents = Math.round(price * 100);
   if (cashInCents < priceInCents) {
-    alert('Customer does not have enough money to purchase the item'); // ممکن است بخواهید alert را با روش دیگری جایگزین کنید تا هشدار ناگهانی ایجاد نشود
+    console.warn('Customer does not have enough money to purchase the item');
     cash.value = '';
     return;
   }
@@ -45,7 +74,7 @@ const checkCashRegister = () => {
     .map(([denominationName, amount]) => [denominationName, Math.round(amount * 100)]);
   const denominations = [10000, 2000, 1000, 500, 100, 25, 10, 5, 1];
   const result = { status: 'OPEN', change: [] };
-  const totalCID = reversedCid.reduce((prev, [, amount]) => prev + amount, 0); // تغییر به [, amount]
+  const totalCID = reversedCid.reduce((prev, [, amount]) => prev + amount, 0);
 
   if (totalCID < changeDue) {
     displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>';
@@ -56,7 +85,7 @@ const checkCashRegister = () => {
     result.status = 'CLOSED';
   }
 
-  for (let i = 0; i < reversedCid.length; i++) { // اصلاح شرط حلقه
+  for (let i = 0; i < reversedCid.length; i += 1) {
     if (changeDue >= denominations[i] && changeDue > 0) {
       const [denominationName, total] = reversedCid[i];
       const possibleChange = Math.min(total, changeDue);
@@ -83,35 +112,6 @@ const checkResults = () => {
     return;
   }
   checkCashRegister();
-};
-
-const updateUI = (change) => { // اضافه کردن پرانتز دور متغیر change
-  const currencyNameMap = {
-    PENNY: 'Pennies',
-    NICKEL: 'Nickels',
-    DIME: 'Dimes',
-    QUARTER: 'Quarters',
-    ONE: 'Ones',
-    FIVE: 'Fives',
-    TEN: 'Tens',
-    TWENTY: 'Twenties',
-    'ONE HUNDRED': 'Hundreds',
-  }; // اضافه کردن کاما در انتهای آبجکت
-  // Update cid if change is passed in
-  if (change) {
-    change.forEach(([changeDenomination, changeAmount]) => {
-      const targetArr = cid.find(([denominationName]) => denominationName === changeDenomination); // تغییر به [denominationName]
-      targetArr[1] = (Math.round(targetArr[1] * 100) - Math.round(changeAmount * 100)) / 100;
-    });
-  }
-
-  cash.value = '';
-  priceScreen.textContent = `Total: $${price}`;
-  cashDrawerDisplay.innerHTML = `<p><strong>Change in drawer:</strong></p>
-    ${cid
-      .map(([denominationName, amount]) => <p>${currencyNameMap[denominationName]}: $${amount}</p>)
-      .join('')}
-  `;
 };
 
 purchaseBtn.addEventListener('click', checkResults);
