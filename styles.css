@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(12, 79, 99);
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px 10px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  text-align: center;
+}
+
+#change-due {
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0 20px;
+}
+
+label {
+  font-size: 18px;
+}
+
+.user-input {
+  height: 30px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 15px;
+}
+
+.price-screen {
+  border: 10px solid #cdd8e3;
+  background-color: rgb(21, 139, 160);
+  height: 50px;
+  width: 200px;
+  margin-left: -40px;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#price {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.top-register {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px 10px 0 0;
+  padding-top: 20px;
+  background-color: rgb(130, 199, 211);
+  height: 250px;
+  width: 325px;
+}
+
+.btns-container {
+  width: 25%;
+}
+.btn {
+  border-radius: 50%;
+  border: none;
+  width: 21px;
+  height: 20px;
+  background-color: rgb(82, 129, 176);
+  margin-top: 10px;
+}
+
+.check-btn-styles {
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+  color: #0a0a23;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #235e6d;
+  background-image: linear-gradient(#235e6d, #aae2f0);
+  border-color: #9dbac2;
+  border-width: 3px;
+}
+
+.cash-drawer-display {
+  font-size: 1.1rem;
+  background-color: white;
+  width: 65%;
+  height: 95%;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+}
+
+.bottom-register {
+  background-color: #79b8d6;
+  height: 50px;
+  width: 325px;
+  margin-top: 10px;
+}
+
+.circle {
+  margin: 15px auto;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(27, 82, 134);
+}
