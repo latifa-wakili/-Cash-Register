@@ -1,11 +1,10 @@
 readme# Project Title 🚀
-first-js-repo
+-Cash-Register
 ## Project Description 📝
 this palindrome project is a basic sample of JS project created using html css and js codes
 
 ## Demo 📸
-https://latifa-wakili.github.io/first-js-repo/
-![Demo](first-repo.png)
+![Demo](cash.png)
 
 
 ## Technologies Used 🛠️
@@ -19,11 +18,11 @@ https://latifa-wakili.github.io/first-js-repo/
 Provide step-by-step instructions on how to install and set up your project. Include any dependencies or prerequisites that need to be installed.
 
 ```bash
-# git@github.com:latifa-wakili/first-js-repo.git.
+# git@github.com:latifa-wakili/-Cash-Register.git
 ```
 
 ```bash
-# cd first-js-repo.
+# cd -Cash-Register.
 ```
 
 ```bash
