@@ -4,6 +4,7 @@ readme# Project Title 🚀
 this Cash-Register project is a basic sample of JS project created using html css and js codes
 
 ## Demo 📸
+https://latifa-wakili.github.io/-Cash-Register/
 ![Demo](cash.png)
 
 
