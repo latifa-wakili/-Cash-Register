@@ -4,7 +4,7 @@ readme# Project Title 🚀
 this Cash-Register project is a basic sample of JS project created using html css and js codes
 
 ## Demo 📸
-![Demo](cash.png)
+![Demo](cash-R.png)
 
 
 ## Technologies Used 🛠️
