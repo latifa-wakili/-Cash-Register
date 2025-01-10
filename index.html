@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>Cash Register Project</title>
-    </head>
-    <body>
-        <main id="container">
-            <h2>Cash Register Project</h2>
-            <input autocomplete="off" type="text" id="cash">
-            <button id="purchase-btn">Purchase</button> 
-            <p id="price"></p>
-            <p id="change"></p><br>
-            <div id="change-due"></div>
-            <div id="cash-in-drawer"></div>
-        </main>
-        <script src="script.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Cash Register Project</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Cash Register Project</h2>
+      <div class="input-group">
+        <label for="cash">Enter Cash Amount:</label>
+        <input autocomplete="off" type="text" id="cash" />
+      </div>
+      <button id="purchase-btn">Purchase</button>
+      <p id="price"></p>
+      <p id="change"></p><br>
+      <div id="change-due"></div>
+      <div id="cash-in-drawer"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
